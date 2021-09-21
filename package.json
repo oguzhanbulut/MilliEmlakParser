@@ -1,0 +1,23 @@
+{
+  "name": "milliemlakparser",
+  "version": "1.0.0",
+  "description": "Fetch the information of the tender promotions in the list.txt",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install",
+    "start": "nodemon index.js --exec babel-node",
+    "build": "nexe index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["milliemlak", "parser", "puppeteer", "sqlite"],
+  "author": "oguzhanbulut",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^9.1.1",
+    "puppeteer-core": "^9.1.1",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "sqlite": "^4.0.21"
+  }
+}
