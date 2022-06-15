@@ -9,7 +9,12 @@
     "build": "nexe index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["milliemlak", "parser", "puppeteer", "sqlite"],
+  "keywords": [
+    "milliemlak",
+    "parser",
+    "puppeteer",
+    "sqlite"
+  ],
   "author": "oguzhanbulut",
   "license": "ISC",
   "dependencies": {

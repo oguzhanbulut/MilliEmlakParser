@@ -3,14 +3,14 @@ const fs = require('fs');
 
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path')
-const dbPath = path.resolve(__dirname, 'db.sqlite')
+const dbPath = path.resolve(__dirname, 'db-15-06.sqlite')
 // open the database
 let db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE, (err) => {
     if (err) {
         console.error(err.message);
     }else{
         console.log('Connected to the chinook database.');
-        db.run('CREATE TABLE emlak (il TEXT, ilce TEXT, mahalle TEXT, ada TEXT, imar TEXT, tasinmazMt TEXT, hazineMt TEXT, satilacakMt TEXT, bedel TEXT, teminat TEXT, tarih TEXT)')
+        // db.run('CREATE TABLE emlak (il TEXT, ilce TEXT, mahalle TEXT, ada TEXT, imar TEXT, tasinmazMt TEXT, hazineMt TEXT, satilacakMt TEXT, bedel TEXT, teminat TEXT, tarih TEXT)')
     }
 });
 
@@ -38,39 +38,39 @@ let db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE, (err) => {
 
         // wait for element defined by XPath appear in page
         await page.waitForXPath("(//h1[@class='title'])");
-
+        console.log("oldu")
         // evaluate XPath expression of the target selector (it return array of ElementHandle)
-        let ilHandle = await page.$x("(/html/body/div[7]/div[2]/div[1]/div/div[1]/ul[2]/li[2]/text())");
+        let ilHandle = await page.$x("(/html/body/div[8]/div[2]/div[1]/div/div[1]/ul[2]/li[2]/text())");
         let il = await page.evaluate(el => el.textContent, ilHandle[0]);
 
-        let ilceHandle = await page.$x("(/html/body/div[7]/div[2]/div[1]/div/div[1]/ul[2]/li[3]/text())");
+        let ilceHandle = await page.$x("(/html/body/div[8]/div[2]/div[1]/div/div[1]/ul[2]/li[3]/text())");
         let ilce = await page.evaluate(el => el.textContent, ilceHandle[0]);
 
-        let mahalleHandle = await page.$x("(/html/body/div[7]/div[2]/div[1]/div/div[1]/ul[2]/li[4]/text())");
+        let mahalleHandle = await page.$x("(/html/body/div[8]/div[2]/div[1]/div/div[1]/ul[2]/li[4]/text())");
         let mahalle = await page.evaluate(el => el.textContent, mahalleHandle[0]);
 
-        let adaHandle = await page.$x("(/html/body/div[7]/div[2]/div[2]/div/div[1]/div[2]/ul/li[2]/span[2]/text())");
+        let adaHandle = await page.$x("(/html/body/div[8]/div[2]/div[2]/div/div[1]/div[2]/ul/li[2]/span[2]/text())");
         let ada = await page.evaluate(el => el.textContent, adaHandle[0]);
 
-        let imarHandle = await page.$x("(/html/body/div[7]/div[2]/div[2]/div/div[1]/div[2]/ul/li[3]/span[2]/text())");
+        let imarHandle = await page.$x("(/html/body/div[8]/div[2]/div[2]/div/div[1]/div[2]/ul/li[3]/span[2]/text())");
         let imar = await page.evaluate(el => el.textContent, imarHandle[0]);
 
-        let tasinmazMtHandle = await page.$x("(/html/body/div[7]/div[2]/div[2]/div/div[1]/div[2]/ul/li[7]/span[2]/text())");
+        let tasinmazMtHandle = await page.$x("(/html/body/div[8]/div[2]/div[2]/div/div[1]/div[2]/ul/li[7]/span[2]/text())");
         let tasinmazMt = await page.evaluate(el => el.textContent, tasinmazMtHandle[0]);
 
-        let hazineMtHandle = await page.$x("(/html/body/div[7]/div[2]/div[2]/div/div[1]/div[2]/ul/li[8]/span[2]/text())");
+        let hazineMtHandle = await page.$x("(/html/body/div[8]/div[2]/div[2]/div/div[1]/div[2]/ul/li[8]/span[2]/text())");
         let hazineMt = await page.evaluate(el => el.textContent, hazineMtHandle[0]);
 
-        let satilacakMtHandle = await page.$x("(/html/body/div[7]/div[2]/div[2]/div/div[1]/div[2]/ul/li[9]/span[2]/text())");
+        let satilacakMtHandle = await page.$x("(/html/body/div[8]/div[2]/div[2]/div/div[1]/div[2]/ul/li[9]/span[2]/text())");
         let satilacakMt = await page.evaluate(el => el.textContent, satilacakMtHandle[0]);
 
-        let bedelHandle = await page.$x("(/html/body/div[7]/div[2]/div[2]/div/div[1]/div[2]/ul/li[10]/span[2]/text())");
+        let bedelHandle = await page.$x("(/html/body/div[8]/div[2]/div[2]/div/div[1]/div[2]/ul/li[10]/span[2]/text())");
         let bedel = await page.evaluate(el => el.textContent, bedelHandle[0]);
 
-        let teminatHandle = await page.$x("(/html/body/div[7]/div[2]/div[2]/div/div[1]/div[2]/ul/li[11]/span[2]/text())");
+        let teminatHandle = await page.$x("(/html/body/div[8]/div[2]/div[2]/div/div[1]/div[2]/ul/li[11]/span[2]/text())");
         let teminat = await page.evaluate(el => el.textContent, teminatHandle[0]);
 
-        let tarihHandle = await page.$x("(/html/body/div[7]/div[2]/div[2]/div/div[1]/div[2]/ul/li[12]/span[2]/text())");
+        let tarihHandle = await page.$x("(/html/body/div[8]/div[2]/div[2]/div/div[1]/div[2]/ul/li[12]/span[2]/text())");
         let tarih = await page.evaluate(el => el.textContent, tarihHandle[0]);
 
 
